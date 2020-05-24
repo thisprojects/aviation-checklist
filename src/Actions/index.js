@@ -13,12 +13,11 @@ export const removeChecklistItem = (checkListItemId, listName) => ({
 export const toggleItemStatus = (checkListItemId, listName) => ({
   type: "TOGGLE_ITEM_STATUS",
   payload: checkListItemId,
-  listName
-})
+  listName,
+});
 
 export const assignEngineer = (checkListItemId, engineerId, listName) => ({
   type: "ASSIGN_ENGINEER",
-  payload: {id: checkListItemId, engineer: engineerId},
-  listName
-})
-
+  payload: { id: checkListItemId, engineer: engineerId },
+  listName,
+});
