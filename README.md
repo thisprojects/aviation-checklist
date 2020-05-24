@@ -1,3 +1,9 @@
+## Installation
+
+Clone repo.
+Use either 'Yarn Install' or 'Npm Install' to install dependencies.
+See below for more details!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -1,3 +1,5 @@
+/* I will start to break styles into smaller modules and import them as the app scales */
+
 $text-color: dimgray;
 $border-color: whitesmoke;
 
@@ -11,6 +13,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* floating navigation bar */
 header {
   position: fixed;
   top: 0;
@@ -36,16 +39,27 @@ button {
   margin: 10px;
 }
 
+/* purely to prevent our floating text input from hiding list items */
 .footer {
   padding: 60px;
 }
 
-.about {
+/* instructions page */
+.home {
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 100px;
   width: 70%;
+  h1 {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 40px;
+  }
+  p {
+    margin: 3px;
+  }
 }
 
+/* floating text input */
 .add-item {
   position: fixed;
   bottom: 0;
@@ -68,6 +82,7 @@ button {
   }
 }
 
+/* name and ID section within checklists */
 .name-id-wrapper {
   display: flex;
   flex-direction: column;
@@ -93,9 +108,12 @@ button {
     .checklist-item {
       flex: 1 1 20%;
     }
-
+    /* the checkbox has its own flex basis to prevent it from taking up too much space */
     .checkbox {
       flex: 1 1 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
     }
   }
 }
@@ -113,6 +131,7 @@ button {
   }
 }
 
+/* enter column mode at 800px */
 @media screen and (max-width: 800px) {
   body {
     font-size: 0.8em;

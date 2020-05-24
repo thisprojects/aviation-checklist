@@ -9,13 +9,13 @@ const MapEngineers = () => {
   );
 
   return engineers.map((item) => (
-    <option key={ item.id } value={ item.id }>
-      { item.name }
+    <option key={item.id} value={item.id}>
+      {item.name}
     </option>
   ));
 }; // End of MapEngineers
 
-const EngineerDropDown = ({item : { id, engineer}, source }) => {
+const EngineerDropDown = ({ item: { id, engineer }, source }) => {
   const dispatch = useDispatch();
 
   const handleChange = (evt) =>
@@ -25,7 +25,7 @@ const EngineerDropDown = ({item : { id, engineer}, source }) => {
     <div className="checklist-item">
       <label className="engineer-dropdown">
         <p>Engineer</p>
-        <select onChange={ handleChange } value={ engineer }>
+        <select onChange={handleChange} value={engineer}>
           <MapEngineers />
         </select>
       </label>
@@ -33,4 +33,4 @@ const EngineerDropDown = ({item : { id, engineer}, source }) => {
   );
 }; // End of EngineerDropDown
 
-export default WithChecklistHoc(EngineerDropDown)
+export default WithChecklistHoc(EngineerDropDown);

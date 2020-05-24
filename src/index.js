@@ -6,21 +6,17 @@ import { Provider } from "react-redux";
 import store from "./Store";
 import AircraftChecklist from "./Components/aircraft-checklist";
 import WithChecklistHoc from "./Components/with-checklist-hoc";
+import Home from "./Components/home"
 import { Route, Switch, BrowserRouter as Router, Link } from "react-router-dom";
 
 const Navigation = () => (
   <header>
-    <Link to="/">Aircraft Checklist</Link>
-    <Link to="/engineers">Engineer Rosta</Link>
-    <Link to="/about">About</Link>
+    <Link to="/">Home</Link>
+    <Link to="/aircraft">Aircraft Checklist</Link>
+    <Link to="/engineers">Engineer Roster</Link>
   </header>
 );
 
-const About = () => (
-  <div className="about">
-    <p>About this app</p>
-  </div>
-);
 
 // The application is easily extended with additional checklists using
 // the 'WithChecklist' higher order component. A basic checklist (with no extra items)
@@ -33,13 +29,16 @@ const App = () => (
       <Navigation />
       <Switch>
         <Route exact path="/">
-          <AircraftChecklist source={"aircraft"} />
+          <Home />
+        </Route>
+        <Route exact path="/aircraft">
+          <AircraftChecklist source={"aircraft"} checkboxLabel={"done"} />
         </Route>
         <Route exact path="/engineers">
-          <EngineerChecklist source={"engineers"} />
-        </Route>
-        <Route exact path="/about">
-          <About />
+          <EngineerChecklist
+            source={"engineers"}
+            checkboxLabel={"availability"}
+          />
         </Route>
       </Switch>
       <div className="footer"></div>
